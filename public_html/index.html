@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html ng-app="app">
+    <head>
+        <title>Directiva ca-options</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="lib/angular/1.2/js/angular.js" type="text/javascript"></script>
+        <script src="index.js" type="text/javascript"></script>
+    </head>
+    <body ng-controller="GalacticaController">
+        <form name="mainForm">
+        
+            Nave: <select ng-model="nave" ca-options="enemy" name="nave" ng-required="true" ></select> y su valor es:{{nave}}
+            <br>
+            Personaje: <select ng-model="personaje" ca-options="" ></select>y su valor es:{{personaje}}     
+        
+            <br>
+            <br>
+            mainForm.nave.$error.required={{mainForm.nave.$error.required}}
+            <br>
+            mainForm.personaje.$error.required={{mainForm.personaje.$error.required}}
+            <br>
+            ={{mainForm.personaje.$error |json}}
+            
+        </form>
+    </body>
+</html>
