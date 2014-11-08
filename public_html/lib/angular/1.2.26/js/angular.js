@@ -21543,8 +21543,18 @@ var selectDirective = ['$compile', '$parse', function($compile,   $parse) {
       });
     }],
 
-    link: function(scope, element, attr, ctrls) {
+compile:function(element,attr) {
+     console.log("compile ngOptions="+element.parent().html());
+    return {
+        pre:function(scope, element, attr, ctrls) {
+             console.log("pre ngOptions="+element.parent().html());
+            
+        },post:
+        function(scope, element, attr, ctrls) {
       // if ngModel is not defined, we don't need to do anything
+      console.log("post ngOptions="+element.parent().html());
+      
+      
       if (!ctrls[1]) return;
 
       var selectCtrl = ctrls[0],
@@ -21952,6 +21962,11 @@ var selectDirective = ['$compile', '$parse', function($compile,   $parse) {
         }
       }
     }
+    
+    
+        }
+}
+    
   };
 }];
 
