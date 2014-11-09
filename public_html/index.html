@@ -20,7 +20,9 @@
             -->
             
             <div ng-repeat="(campo,valor) in codemotion">
-            {{campo}}:<select ng-model="codemotion[campo]" entre-semana fin-semana  ></select>
+            {{campo}}:<select ng-model="codemotion[campo]" entre-semana optt vacio  ></select>
+            <br>
+            {{tipoDe(codemotion[campo])}}
             <br>
             </div>
             {{codemotion | json }}

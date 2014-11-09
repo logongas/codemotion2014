@@ -27,6 +27,26 @@ app.directive("dir1", ['$compile',function ($compile) {
 
     }]);
 
+app.directive("vacio", ['$compile',function ($compile) {
+        var directiveDefinitionObject = {
+            restrict: "A",
+            priority:10,
+            compile: function (tElement, tAttrs) {
+                tElement.append("<option  value='0'>--Elige una opcion--</option>");
+
+                return {
+                    pre: function (scope, iElement, iAttrs, controller, transcludeFn) { 
+                    },
+                    post: function (scope, iElement, iAttrs, controller, transcludeFn) {
+                    }
+                };
+            }
+        };
+
+        return directiveDefinitionObject;
+
+    }]);
+
 app.directive("entreSemana", ['$compile',function ($compile) {
         var directiveDefinitionObject = {
             restrict: "A",
@@ -61,14 +81,33 @@ app.directive("entreSemanaMal", ['$compile',function ($compile) {
 
     }]);
 
+app.directive("optt", ['$compile',function ($compile) {
+        var directiveDefinitionObject = {
+            restrict: "A",
+            template:"<fin-semana-mal></fin-semana-mal>",
+            compile: function (tElement, tAttrs) {
+                //tElement.append("<option ca-color='red' value='6'>Sabado</option>");
+                //tElement.append("<option value='7'>Domingo</option>");
 
+                return {
+                    pre: function (scope, iElement, iAttrs, controller, transcludeFn) {
+                    },
+                    post: function (scope, iElement, iAttrs, controller, transcludeFn) {
+                    }
+                };
+            }
+        };
+
+        return directiveDefinitionObject;
+
+    }]);
 
 app.directive("finSemana", ['$compile',function ($compile) {
         var directiveDefinitionObject = {
             restrict: "A",
             priority:1,
             compile: function (tElement, tAttrs) {
-                tElement.append("<option value='6'>Sabado</option>");
+                tElement.append("<option ca-color='red' value='6'>Sabado</option>");
                 tElement.append("<option value='7'>Domingo</option>");
 
                 return {
@@ -86,7 +125,7 @@ app.directive("finSemana", ['$compile',function ($compile) {
 
 app.directive("finSemanaMal", ['$compile',function ($compile) {
         var directiveDefinitionObject = {
-            restrict: "A",
+            restrict: "EA",
             template:"<option value='6'>Sabado</option><option value='7'>Domingo</option>"
         };
 
@@ -232,14 +271,16 @@ app.controller("GalacticaController", ['$scope', function ($scope) {
 
         
         $scope.codemotion={
-            madrid:null,
-            berlin:null,
-            telAviv:null,
-            milan:null
+            madrid:0,
+            berlin:0,
+            telAviv:0,
+            milan:0
         }
         
         
         
-        
+        $scope.tipoDe=function(v) {
+            return typeof(v);
+        }
         
     }]);
