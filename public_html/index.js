@@ -1,5 +1,25 @@
 var app = angular.module("app", []);
 
+app.directive("directiveName", [function () {
+    var directiveDefinitionObject = {
+        template:function (tElement, tAttrs) {
+            return "";
+        },
+        compile: function (tElement, tAttrs) {
+            return {
+                pre: function (scope, iElement, iAttrs, controller, transcludeFn) {
+                },
+                post: function (scope, iElement, iAttrs, controller, transcludeFn) {
+                }
+            };
+        }
+    };
+
+    return directiveDefinitionObject;
+}]);
+
+
+
 app.directive("dir1", ['$compile',function ($compile) {
         var directiveDefinitionObject = {
             restrict: "A",

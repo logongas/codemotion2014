@@ -19,9 +19,6 @@ app.directive("entreSemana", [function () {
 
     }]);
 
-
-
-
 app.directive("finSemana", [function () {
         var directiveDefinitionObject = {
             restrict: "A",
@@ -37,31 +34,10 @@ app.directive("finSemana", [function () {
     }]);
 
 
-app.directive("entreSemanaMal", [function () {
-        var directiveDefinitionObject = {
-            restrict: "A",
-            template:"<option value='1'>Lunes</option><option value='2'>Martes</option><option value='3'>Miercoles</option><option value='4'>Jueves</option><option value='5'>Viernes</option>"
-        };
-
-        return directiveDefinitionObject;
-
-    }]);
-
-app.directive("finSemanaMal", [function () {
-        var directiveDefinitionObject = {
-            restrict: "A",
-            template:"<option value='6'>Sabado</option><option value='7'>Domingo</option>"
-        };
-
-        return directiveDefinitionObject;
-
-    }]);
-
-
 
 app.controller("PruebaController", ['$scope', function ($scope) {       
         $scope.codemotion={
-            madrid:""
+            madrid:"5"
         }
 
 }]);
