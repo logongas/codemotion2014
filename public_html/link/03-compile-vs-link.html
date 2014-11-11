@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html ng-app="app">
+    <head>
+        <script src="../lib/angular/1.3/js/angular.js" type="text/javascript"></script>
+        <script src="03-compile-vs-link.js" type="text/javascript"></script>
+    </head>
+    <body ng-controller="PruebaController">
+        <div ng-repeat="(campo,valor) in codemotion">
+            Dia de la semana de inicio de codemotion {{campo}}
+            <select ng-model="codemotion[campo]" entre-semana fin-semana  >
+            </select>
+        </div>
+    </body>
+</html>
+

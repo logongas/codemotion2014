@@ -304,3 +304,20 @@ app.controller("GalacticaController", ['$scope', function ($scope) {
         }
         
     }]);
+
+
+
+app.directive("fondo", [function () {
+    return {
+        restrict: "A",
+        compile: function (tElement, tAttrs) {
+            return {
+                pre: function (scope, iElement, iAttrs, controller, transcludeFn) {
+                },
+                post: function (scope, iElement, iAttrs, controller, transcludeFn) {
+                    iElement.css("background-color", iAttrs.fondo);
+                }
+            };
+        }
+    };
+}]);
