@@ -5,10 +5,14 @@
         <script src="04-prelink.js" type="text/javascript"></script>
     </head>
     <body ng-controller="PruebaController">
+        <!-- Sin la nueva directiva -->
+        <!-- <select ng-model="ciudad" ng-options="value as value.toString for value in metadata['ciudad'].values"  ></select> -->
+        <!-- <select ng-model="diaSemana" ng-options="value for value in metadata['diaSemana'].values"  ></select> -->       
+        
         
         Cuidad:<select ng-model="ciudad" ca-options  ></select>
         <br>
-        Dia de la semana:<select ng-model="diaSemana" ca-options  ></select>
+        Dia de la semana:<select ng-model="diaSemana" ca-options ></select>
 
     </body>
 </html>
