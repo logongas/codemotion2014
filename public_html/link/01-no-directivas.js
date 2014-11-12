@@ -28,7 +28,7 @@ app.directive("finSemana", [function () {
                 },
                 post: function (scope, iElement, iAttrs, controller, transcludeFn) {
                     iElement.append("<option value='6'>Sabado</option>");
-                    iElement.append("<option ng-style='{backgroundColor:\"green\"}' value='7'>Domingo</option>");
+                    iElement.append("<option ng-style='{backgroundColor:\"red\"}' value='7'>Domingo</option>");
                 }
             }
 
